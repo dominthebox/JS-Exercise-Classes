@@ -125,8 +125,13 @@ class Airplane {
           + {name} and {location} of course come from the instance's own properties.
   */
  class Lambdasian {
-    constructor(obj){
-      this.name = 
+    constructor(prop){
+      this.name = prop.name;
+      this.age = prop.age;
+      this.location = prop.location;
+    }
+    speak(){
+      return `Hello my name is ${this.name}, I am from ${this.location}`;
     }
   }
   
@@ -144,8 +149,19 @@ class Airplane {
           + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
           + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
   */
- class Instructor {
-
+ class Instructor extends Lambdasian{
+      constructor(prop){
+        super.prop;
+        this.specialty = prop.specialty;
+        this.favLanguage = prop.favLanguage;
+        this.catchPhrase = prop.catchPhrase;
+      }
+      demo(subject){
+        return `Today we are learning about ${subject}`;
+      }
+      grade(student, subject){
+        return `${student.name} receives a perfect score on ${subject}`;
+      }
  }
   /*
     TASK 5
@@ -162,7 +178,13 @@ class Airplane {
           + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
           + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
   */
- class Student {
+ class Student extends Lambdasian {
+   constructor(prop){
+    super.prop;
+    this.previousBackground = prop.previousBackground;
+    this.className = prop.className;
+    this.favSubjects = [];
+   }
      
  }
   
