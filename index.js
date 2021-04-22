@@ -60,7 +60,7 @@ class Airplane {
     }
   }
   
-  const dom = new Person('Dom', 32);
+  // const dom = new Person('Dom', 32);
 
   // dom.eat('🍕');
   // dom.eat('🍎');
@@ -183,10 +183,10 @@ class Airplane {
     super(prop);
     this.previousBackground = prop.previousBackground;
     this.className = prop.className;
-    this.favSubjects = [];
+    this.favSubjects = prop.favSubjects;
    }
    listSubjects(){
-     return `Loving $[]`;
+     return `Loving ${this.favSubjects.join(', ')}!`;
    }
    PRAssignment(subject){
      return `${this.name} has submitted a PR for ${subject}`;
@@ -196,6 +196,18 @@ class Airplane {
    }
  }
   
+ const dom = new Student({
+   name: 'Dom',
+   age: 32,
+   location: 'NJ',
+   previousBackground: 'Chef',
+   className: 'Web_43',
+   favSubjects: ["JavaScript", "HTML", "CSS", "React"]
+ })
+
+ dom.listSubjects();
+console.log(dom.listSubjects());
+
   /*
     TASK 6
       - Write a ProjectManager class extending Instructor.
@@ -218,7 +230,7 @@ class Airplane {
      standUp(channel){
        return `${this.name} announces to ${channel}, @channel standy times!`;
      }
-     debugsCode(student.name, subject){
+     debugsCode(student, subject){
        return `${this.name} debugs ${student.name}'s code on ${subject}`;
      }
  }
