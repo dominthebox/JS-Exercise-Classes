@@ -151,7 +151,7 @@ class Airplane {
   */
  class Instructor extends Lambdasian{
       constructor(prop){
-        super.prop;
+        super(prop);
         this.specialty = prop.specialty;
         this.favLanguage = prop.favLanguage;
         this.catchPhrase = prop.catchPhrase;
@@ -180,12 +180,20 @@ class Airplane {
   */
  class Student extends Lambdasian {
    constructor(prop){
-    super.prop;
+    super(prop);
     this.previousBackground = prop.previousBackground;
     this.className = prop.className;
     this.favSubjects = [];
    }
-     
+   listSubjects(){
+     return `Loving $[]`;
+   }
+   PRAssignment(subject){
+     return `${this.name} has submitted a PR for ${subject}`;
+   }
+   sprintChallenge(subject){
+     return `${this.name} has begun sprint challenge on ${subject}`;
+   }
  }
   
   /*
@@ -201,8 +209,18 @@ class Airplane {
           + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
           + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
   */
- class ProjectManager {
-     
+ class ProjectManager extends Instructor{
+     constructor(prop){
+      super(prop);
+      this.gradClassName = prop.gradClassName;
+      this.favInstructor = prop.favInstructor;
+     }
+     standUp(channel){
+       return `${this.name} announces to ${channel}, @channel standy times!`;
+     }
+     debugsCode(student.name, subject){
+       return `${this.name} debugs ${student.name}'s code on ${subject}`;
+     }
  }
   /*
     STRETCH PROBLEM (no tests!)
