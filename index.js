@@ -125,7 +125,9 @@ class Airplane {
           + {name} and {location} of course come from the instance's own properties.
   */
  class Lambdasian {
-    
+    constructor(obj){
+      this.name = 
+    }
   }
   
   /*
